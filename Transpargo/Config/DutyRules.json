@@ -1,0 +1,1686 @@
+[
+  {
+    "country": "USA",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "6204431000" ],
+    "duty": "11.3+50",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "USA",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "6204432000" ],
+    "duty": "7.1+50",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "USA",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "620443010", "620443020" ],
+    "duty": "14.9+50",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "USA",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "6204434010", "6204434020", "6204434030", "6204434040" ],
+    "duty": "16+50",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "UAE",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "620443000" ],
+    "duty": "0+5",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "UK",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "620443000" ],
+    "duty": "12+9.6",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "BANGLADESH",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "620443000" ],
+    "duty": "25",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "620443000" ],
+    "duty": "12+9.6",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "620443000" ],
+    "duty": "12+9.6",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "620443000" ],
+    "duty": "25",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "620443000" ],
+    "duty": "0",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "620443000" ],
+    "duty": "0",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "CLOTHING",
+    "subcategory": "SYNTHETIC",
+    "hs": [ "620443000" ],
+    "duty": "8.1+13",
+    "gstRule": "value<2500?5:18"
+  },
+
+  {
+    "country": "BANGLADESH",
+    "category": "CLOTHING",
+    "subcategory": "COTTON",
+    "hs": [ "610910000" ],
+    "duty": "25",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "CLOTHING",
+    "subcategory": "COTTON",
+    "hs": [ "610910000", "6109100090" ],
+    "duty": "12+9.6",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "UAE",
+    "category": "CLOTHING",
+    "subcategory": "COTTON",
+    "hs": [ "610910000" ],
+    "duty": "5",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "UK",
+    "category": "CLOTHING",
+    "subcategory": "COTTON",
+    "hs": [ "610910000", "6109100090" ],
+    "duty": "12+9.6",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "USA",
+    "category": "CLOTHING",
+    "subcategory": "COTTON",
+    "hs": [ "610910000", "6109100004", "6109100007", "6109100011", "6109100012", "6109100014", "6109100018", "6109100023", "6109100027", "6109100037", "6109100040", "6109100045", "6109100060", "6109100065", "6109100070" ],
+    "duty": "16.5+50",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "CLOTHING",
+    "subcategory": "COTTON",
+    "hs": [ "61091010", "61091020" ],
+    "duty": "25",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "CLOTHING",
+    "subcategory": "COTTON",
+    "hs": [ "6109101000", "6109102000" ],
+    "duty": "0",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "CLOTHING",
+    "subcategory": "COTTON",
+    "hs": [ "6109100010", "6109100090" ],
+    "duty": "12+9.6",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "CLOTHING",
+    "subcategory": "COTTON",
+    "hs": [ "61091010", "61091020" ],
+    "duty": "0",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "CLOTHING",
+    "subcategory": "COTTON",
+    "hs": [ "6109101000", "6109109000" ],
+    "duty": "13",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "BANGLADESH",
+    "category": "FASHION ACCESSORIES",
+    "subcategory": "WALLETS",
+    "hs": [ "42023100" ],
+    "duty": "25",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "FASHION ACCESSORIES",
+    "subcategory": "WALLETS",
+    "hs": [ "4202310010", "4202310090" ],
+    "duty": "3",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "UAE",
+    "category": "FASHION ACCESSORIES",
+    "subcategory": "WALLETS",
+    "hs": [ "42023100" ],
+    "duty": "5",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "UK",
+    "category": "FASHION ACCESSORIES",
+    "subcategory": "WALLETS",
+    "hs": [ "4202310010", "4202310090" ],
+    "duty": "2",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "USA",
+    "category": "FASHION ACCESSORIES",
+    "subcategory": "WALLETS",
+    "hs": [ "4202313000" ],
+    "duty": "3.7+50",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "USA",
+    "category": "FASHION ACCESSORIES",
+    "subcategory": "WALLETS",
+    "hs": [ "4202316000" ],
+    "duty": "8+50",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "FASHION ACCESSORIES",
+    "subcategory": "WALLETS",
+    "hs": [ "42023100" ],
+    "duty": "5+15",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "FASHION ACCESSORIES",
+    "subcategory": "WALLETS",
+    "hs": [ "4202310000" ],
+    "duty": "0",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "FASHION ACCESSORIES",
+    "subcategory": "WALLETS",
+    "hs": [ "4202310010", "4202310090" ],
+    "duty": "3",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "FASHION ACCESSORIES",
+    "subcategory": "WALLETS",
+    "hs": [ "42023100" ],
+    "duty": "0",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "FASHION ACCESSORIES",
+    "subcategory": "WALLETS",
+    "hs": [ "4202311030", "4202310090", "4202312000", "4202313000" ],
+    "duty": "5.6+8",
+    "gstRule": "value<2500?5:18"
+  },
+
+  {
+    "country": "BANGLADESH",
+    "category": "COSMETICS",
+    "subcategory": "MAKEUP/SKINCARE",
+    "hs": [ "33049900" ],
+    "duty": "25",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "COSMETICS",
+    "subcategory": "MAKEUP/SKINCARE",
+    "hs": [ "3304990000" ],
+    "duty": "0",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "UAE",
+    "category": "COSMETICS",
+    "subcategory": "MAKEUP/SKINCARE",
+    "hs": [ "33049910", "33049920" ],
+    "duty": "5",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "UK",
+    "category": "COSMETICS",
+    "subcategory": "MAKEUP/SKINCARE",
+    "hs": [ "3304990000" ],
+    "duty": "0",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "USA",
+    "category": "COSMETICS",
+    "subcategory": "MAKEUP/SKINCARE",
+    "hs": [ "3304991000" ],
+    "duty": "0+50",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "USA",
+    "category": "COSMETICS",
+    "subcategory": "MAKEUP/SKINCARE",
+    "hs": [ "3304995000" ],
+    "duty": "50+50",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "COSMETICS",
+    "subcategory": "MAKEUP/SKINCARE",
+    "hs": [ "33049920", "33049930", "33049990" ],
+    "duty": "5+15",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "COSMETICS",
+    "subcategory": "MAKEUP/SKINCARE",
+    "hs": [ "3304992000", "3304993000", "3304999000" ],
+    "duty": "0",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "COSMETICS",
+    "subcategory": "MAKEUP/SKINCARE",
+    "hs": [ "3304990000" ],
+    "duty": "0",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "COSMETICS",
+    "subcategory": "MAKEUP/SKINCARE",
+    "hs": [ "33049920", "33049930", "33049990" ],
+    "duty": "0",
+    "gstRule": "value<2500?5:18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "COSMETICS",
+    "subcategory": "MAKEUP/SKINCARE",
+    "hs": [ "3304993000" ],
+    "duty": "6.5",
+    "gstRule": "value<2500?5:18"
+  },
+
+  ///// FORMULA USED FOR CONVERSION: ConvertedPercentage = (CurrencyRule_INR / 10000) * 100
+
+
+  {
+    "country": "BANGLADESH",
+    "category": "COSMETICS",
+    "subcategory": "SHAMPOO",
+    "hs": [ "33051000" ],
+    "duty": "25",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "COSMETICS",
+    "subcategory": "SHAMPOO",
+    "hs": [ "3305100000" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "UAE",
+    "category": "COSMETICS",
+    "subcategory": "SHAMPOO",
+    "hs": [ "33051000" ],
+    "duty": "5",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "UK",
+    "category": "COSMETICS",
+    "subcategory": "SHAMPOO",
+    "hs": [ "3305100000" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "USA",
+    "category": "COSMETICS",
+    "subcategory": "SHAMPOO",
+    "hs": [ "3305100000" ],
+    "duty": "50+50",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "COSMETICS",
+    "subcategory": "SHAMPOO",
+    "hs": [ "33051010", "33051090" ],
+    "duty": "5+15",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "COSMETICS",
+    "subcategory": "SHAMPOO",
+    "hs": [ "3305101000", "3305109000" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "COSMETICS",
+    "subcategory": "SHAMPOO",
+    "hs": [ "3305100000" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "COSMETICS",
+    "subcategory": "SHAMPOO",
+    "hs": [ "33051010", "33051090" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "COSMETICS",
+    "subcategory": "SHAMPOO",
+    "hs": [ "3305100000" ],
+    "duty": "5",
+    "gstrule": "<2500?5:18"
+  },
+
+  {
+    "country": "BANGLADESH",
+    "category": "COSMETICS",
+    "subcategory": "TOOTHPASTE",
+    "hs": [ "33061000" ],
+    "duty": "25",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "COSMETICS",
+    "subcategory": "TOOTHPASTE",
+    "hs": [ "3306100000" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "UAE",
+    "category": "COSMETICS",
+    "subcategory": "TOOTHPASTE",
+    "hs": [ "33061010", "33061020", "33061090" ],
+    "duty": "5",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "UK",
+    "category": "COSMETICS",
+    "subcategory": "TOOTHPASTE",
+    "hs": [ "3306100000" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "USA",
+    "category": "COSMETICS",
+    "subcategory": "TOOTHPASTE",
+    "hs": [ "3306100000" ],
+    "duty": "50",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "COSMETICS",
+    "subcategory": "TOOTHPASTE",
+    "hs": [ "33061010", "33061090" ],
+    "duty": "5+15",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "COSMETICS",
+    "subcategory": "TOOTHPASTE",
+    "hs": [ "3306101000", "3306109000" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "COSMETICS",
+    "subcategory": "TOOTHPASTE",
+    "hs": [ "3306100000" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "COSMETICS",
+    "subcategory": "TOOTHPASTE",
+    "hs": [ "33061010", "33061090" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "COSMETICS",
+    "subcategory": "TOOTHPASTE",
+    "hs": [ "3306100000" ],
+    "duty": "4.9+6.5",
+    "gstrule": "<2500?5:18"
+  },
+
+  {
+    "country": "BANGLADESH",
+    "category": "ELECTRONICS",
+    "subcategory": "USB CABLES",
+    "hs": [ "85444200" ],
+    "duty": "25",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "ELECTRONICS",
+    "subcategory": "USB CABLES",
+    "hs": [ "8544421000" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "UAE",
+    "category": "ELECTRONICS",
+    "subcategory": "USB CABLES",
+    "hs": [ "85444211" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "UK",
+    "category": "ELECTRONICS",
+    "subcategory": "USB CABLES",
+    "hs": [ "8544421000" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "USA",
+    "category": "ELECTRONICS",
+    "subcategory": "USB CABLES",
+    "hs": [ "854421000" ],
+    "duty": "50",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "ELECTRONICS",
+    "subcategory": "USB CABLES",
+    "hs": [ "85444211" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "ELECTRONICS",
+    "subcategory": "USB CABLES",
+    "hs": [ "8544421100" ],
+    "duty": "4+5",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "ELECTRONICS",
+    "subcategory": "USB CABLES",
+    "hs": [ "8544421000" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "ELECTRONICS",
+    "subcategory": "USB CABLES",
+    "hs": [ "85444211" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "ELECTRONICS",
+    "subcategory": "USB CABLES",
+    "hs": [ "8544421010" ],
+    "duty": "0",
+    "gstrule": "<2500?5:18"
+  },
+
+  {
+    "country": "BANGLADESH",
+    "category": "SPICES",
+    "subcategory": "GINGER/SAFFRON/TURMERIC",
+    "hs": [ "09103010" ],
+    "duty": "10",
+    "gstrule": "5"
+  },
+  {
+    "country": "BANGLADESH",
+    "category": "SPICES",
+    "subcategory": "GINGER/SAFFRON/TURMERIC",
+    "hs": [ "09103090" ],
+    "duty": "5",
+    "gstrule": "5"
+  },
+  {
+    "country": "GERMANY",
+    "category": "SPICES",
+    "subcategory": "GINGER/SAFFRON/TURMERIC",
+    "hs": [ "910300000" ],
+    "duty": "0",
+    "gstrule": "5"
+  },
+  {
+    "country": "UAE",
+    "category": "SPICES",
+    "subcategory": "GINGER/SAFFRON/TURMERIC",
+    "hs": [ "09103010", "09103020" ],
+    "duty": "5",
+    "gstrule": "5"
+  },
+  {
+    "country": "UK",
+    "category": "SPICES",
+    "subcategory": "GINGER/SAFFRON/TURMERIC",
+    "hs": [ "910300000" ],
+    "duty": "0",
+    "gstrule": "5"
+  },
+  {
+    "country": "USA",
+    "category": "SPICES",
+    "subcategory": "GINGER/SAFFRON/TURMERIC",
+    "hs": [ "910300000" ],
+    "duty": "0",
+    "gstrule": "5"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "SPICES",
+    "subcategory": "GINGER/SAFFRON/TURMERIC",
+    "hs": [ "09103000" ],
+    "duty": "5",
+    "gstrule": "5"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "SPICES",
+    "subcategory": "GINGER/SAFFRON/TURMERIC",
+    "hs": [ "910300000" ],
+    "duty": "0",
+    "gstrule": "5"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "SPICES",
+    "subcategory": "GINGER/SAFFRON/TURMERIC",
+    "hs": [ "910300000" ],
+    "duty": "0",
+    "gstrule": "5"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "SPICES",
+    "subcategory": "GINGER/SAFFRON/TURMERIC",
+    "hs": [ "91030100000" ],
+    "duty": "5",
+    "gstrule": "5"
+  },
+
+  {
+    "country": "SOUTH KOREA",
+    "category": "SPICES",
+    "subcategory": "GINGER/SAFFRON/TURMERIC",
+    "hs": [ "910300000" ],
+    "duty": "5+8",
+    "gstrule": "5"
+  },
+  {
+    "country": "BANGLADESH",
+    "category": "FOOD",
+    "subcategory": "SEASONINGS",
+    "hs": [ "21039010", "21309090" ],
+    "duty": "25",
+    "gstrule": "5"
+  },
+  {
+    "country": "GERMANY",
+    "category": "FOOD",
+    "subcategory": "SEASONINGS",
+    "hs": [ "2103901000" ],
+    "duty": "0",
+    "gstrule": "5"
+  },
+  {
+    "country": "UAE",
+    "category": "FOOD",
+    "subcategory": "SEASONINGS",
+    "hs": [ "21039010", "21039020" ],
+    "duty": "5",
+    "gstrule": "5"
+  },
+  {
+    "country": "UK",
+    "category": "FOOD",
+    "subcategory": "SEASONINGS",
+    "hs": [ "2103901000", "2103903000" ],
+    "duty": "0",
+    "gstrule": "5"
+  },
+  {
+    "country": "USA",
+    "category": "FOOD",
+    "subcategory": "SEASONINGS",
+    "hs": [ "2103902000" ],
+    "duty": "50",
+    "gstrule": "5"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "FOOD",
+    "subcategory": "SEASONINGS",
+    "hs": [ "21039011" ],
+    "duty": "4+15",
+    "gstrule": "5"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "FOOD",
+    "subcategory": "SEASONINGS",
+    "hs": [ "2103901100", "2103901200", "210390300", "210390900" ],
+    "duty": "10",
+    "gstrule": "5"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "FOOD",
+    "subcategory": "SEASONINGS",
+    "hs": [ "2103901000", "2103903000" ],
+    "duty": "0",
+    "gstrule": "5"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "FOOD",
+    "subcategory": "SEASONINGS",
+    "hs": [ "21039011", "21039012", "21039013", "21039019" ],
+    "duty": "0",
+    "gstrule": "5"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "FOOD",
+    "subcategory": "SEASONINGS",
+    "hs": [ "2103901010", "2103901020", "21039030", "21039090" ],
+    "duty": "8",
+    "gstrule": "5"
+  },
+  {
+    "country": "BANGLADESH",
+    "category": "FOOD",
+    "subcategory": "BASMATI RICE",
+    "hs": [ "10063011", "10063019" ],
+    "duty": "25",
+    "gstrule": "5"
+  },
+  {
+    "country": "GERMANY",
+    "category": "FOOD",
+    "subcategory": "BASMATI RICE",
+    "hs": [ "1006302110", "1006302120", "1006302190" ],
+    "duty": "161",
+    "gstrule": "5"
+  },
+  {
+    "country": "UAE",
+    "category": "FOOD",
+    "subcategory": "BASMATI RICE",
+    "hs": [ "10063000" ],
+    "duty": "0",
+    "gstrule": "5"
+  },
+  {
+    "country": "UK",
+    "category": "FOOD",
+    "subcategory": "BASMATI RICE",
+    "hs": [ "1006302110", "1006302120", "1006302190" ],
+    "duty": "131",
+    "gstrule": "5"
+  },
+  {
+    "country": "USA",
+    "category": "FOOD",
+    "subcategory": "BASMATI RICE",
+    "hs": [ "1006301020", "1006301040" ],
+    "duty": "61.2",
+    "gstrule": "5"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "FOOD",
+    "subcategory": "BASMATI RICE",
+    "hs": [ "10063030", "10063040", "10063050", "10063060", "10063070" ],
+    "duty": "2.7",
+    "gstrule": "5"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "FOOD",
+    "subcategory": "BASMATI RICE",
+    "hs": [ "1006303000", "1006304000", "1006305000", "1006306000" ],
+    "duty": "45",
+    "gstrule": "5"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "FOOD",
+    "subcategory": "BASMATI RICE",
+    "hs": [ "1006302110", "1006302120", "1006302190" ],
+    "duty": "161",
+    "gstrule": "5"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "FOOD",
+    "subcategory": "BASMATI RICE",
+    "hs": [ "10063030", "10063040", "10063050", "10063060", "10063070" ],
+    "duty": "0",
+    "gstrule": "5"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "FOOD",
+    "subcategory": "BASMATI RICE",
+    "hs": [ "1006301000", "1006302000" ],
+    "duty": "5",
+    "gstrule": "5"
+  },
+
+  {
+    "country": "BANGLADESH",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BATTERY-POWERED EQUIPMENT",
+    "hs": [ "85076000" ],
+    "duty": "25",
+    "gstRule": "18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BATTERY-POWERED EQUIPMENT",
+    "hs": [ "8507600010" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "UAE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BATTERY-POWERED EQUIPMENT",
+    "hs": [ "85076000" ],
+    "duty": "9",
+    "gstRule": "18"
+  },
+  {
+    "country": "UK",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BATTERY-POWERED EQUIPMENT",
+    "hs": [ "8507600010" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "USA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BATTERY-POWERED EQUIPMENT",
+    "hs": [ "8507600010" ],
+    "duty": "28.4",
+    "gstRule": "18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BATTERY-POWERED EQUIPMENT",
+    "hs": [ "85076031" ],
+    "duty": "15",
+    "gstRule": "18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BATTERY-POWERED EQUIPMENT",
+    "hs": [ "8507603100" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BATTERY-POWERED EQUIPMENT",
+    "hs": [ "8507600010" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BATTERY-POWERED EQUIPMENT",
+    "hs": [ "85076031" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BATTERY-POWERED EQUIPMENT",
+    "hs": [ "8507602000" ],
+    "duty": "13.6",
+    "gstRule": "18"
+  },
+
+  /* ------------------ Lithium Ion Batteries ------------------ */
+
+  {
+    "country": "BANGLADESH",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LITHIUM ION BATTERIES",
+    "hs": [ "85076000" ],
+    "duty": "25",
+    "gstRule": "18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LITHIUM ION BATTERIES",
+    "hs": [ "8507600010" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "UAE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LITHIUM ION BATTERIES",
+    "hs": [ "85076000" ],
+    "duty": "9",
+    "gstRule": "18"
+  },
+  {
+    "country": "UK",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LITHIUM ION BATTERIES",
+    "hs": [ "8507600010" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "USA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LITHIUM ION BATTERIES",
+    "hs": [ "8507600010" ],
+    "duty": "28.4",
+    "gstRule": "18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LITHIUM ION BATTERIES",
+    "hs": [ "85076031" ],
+    "duty": "15",
+    "gstRule": "18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LITHIUM ION BATTERIES",
+    "hs": [ "8507603100" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LITHIUM ION BATTERIES",
+    "hs": [ "8507600010" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LITHIUM ION BATTERIES",
+    "hs": [ "85076031" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LITHIUM ION BATTERIES",
+    "hs": [ "8507602000" ],
+    "duty": "13.6",
+    "gstRule": "18"
+  },
+
+  /* ------------------ Flammable Liquid ------------------ */
+
+  {
+    "country": "BANGLADESH",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "FLAMMABLE LIQUID",
+    "hs": [ "38200000" ],
+    "duty": "13",
+    "gstRule": "18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "FLAMMABLE LIQUID",
+    "hs": [ "3820000010" ],
+    "duty": "6.5",
+    "gstRule": "18"
+  },
+  {
+    "country": "UAE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "FLAMMABLE LIQUID",
+    "hs": [ "38200000" ],
+    "duty": "5",
+    "gstRule": "18"
+  },
+  {
+    "country": "UK",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "FLAMMABLE LIQUID",
+    "hs": [ "3820000010" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "USA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "FLAMMABLE LIQUID",
+    "hs": [ "3820000000" ],
+    "duty": "6.5",
+    "gstRule": "18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "FLAMMABLE LIQUID",
+    "hs": [ "38200000" ],
+    "duty": "5",
+    "gstRule": "18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "FLAMMABLE LIQUID",
+    "hs": [ "3820000000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "FLAMMABLE LIQUID",
+    "hs": [ "3820000010" ],
+    "duty": "6.5",
+    "gstRule": "18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "FLAMMABLE LIQUID",
+    "hs": [ "38200000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "FLAMMABLE LIQUID",
+    "hs": [ "3820001000" ],
+    "duty": "6.5",
+    "gstRule": "18"
+  },
+  {
+    "country": "BANGLADESH",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LIGHTER",
+    "hs": [ "96131000" ],
+    "duty": "25",
+    "gstRule": "18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LIGHTER",
+    "hs": [ "9613100000" ],
+    "duty": "2.7",
+    "gstRule": "18"
+  },
+  {
+    "country": "UAE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LIGHTER",
+    "hs": [ "96131000" ],
+    "duty": "5",
+    "gstRule": "18"
+  },
+  {
+    "country": "UK",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LIGHTER",
+    "hs": [ "9613100000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "USA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LIGHTER",
+    "hs": [ "9613100000" ],
+    "duty": "54",
+    "gstRule": "18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LIGHTER",
+    "hs": [ "96131010" ],
+    "duty": "20",
+    "gstRule": "18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LIGHTER",
+    "hs": [ "9613101000" ],
+    "duty": "60",
+    "gstRule": "18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LIGHTER",
+    "hs": [ "9613100000" ],
+    "duty": "2.7",
+    "gstRule": "18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LIGHTER",
+    "hs": [ "96131010" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "LIGHTER",
+    "hs": [ "9613100000" ],
+    "duty": "8",
+    "gstRule": "18"
+  },
+
+  /* ------------------ Petroleum Products ------------------ */
+
+  {
+    "country": "BANGLADESH",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PETROLEUM PRODUCTS",
+    "hs": [ "27101211" ],
+    "duty": "10",
+    "gstRule": "18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PETROLEUM PRODUCTS",
+    "hs": [ "2710121100" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "UAE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PETROLEUM PRODUCTS",
+    "hs": [ "27101211" ],
+    "duty": "5",
+    "gstRule": "18"
+  },
+  {
+    "country": "UK",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PETROLEUM PRODUCTS",
+    "hs": [ "27102121100" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "USA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PETROLEUM PRODUCTS",
+    "hs": [ "2710121510" ],
+    "duty": "50",
+    "gstRule": "18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PETROLEUM PRODUCTS",
+    "hs": [ "27101211" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PETROLEUM PRODUCTS",
+    "hs": [ "2710121100" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PETROLEUM PRODUCTS",
+    "hs": [ "2710121100" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PETROLEUM PRODUCTS",
+    "hs": [ "27101211" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PETROLEUM PRODUCTS",
+    "hs": [ "2710121000" ],
+    "duty": "3",
+    "gstRule": "18"
+  },
+
+  /* ------------------ Paint Related Materials ------------------ */
+
+  {
+    "country": "BANGLADESH",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PAINT RELATED MATERIALS",
+    "hs": [ "32081010" ],
+    "duty": "25",
+    "gstRule": "18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PAINT RELATED MATERIALS",
+    "hs": [ "3208101000" ],
+    "duty": "6.5",
+    "gstRule": "18"
+  },
+  {
+    "country": "UAE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PAINT RELATED MATERIALS",
+    "hs": [ "32081010" ],
+    "duty": "8",
+    "gstRule": "18"
+  },
+  {
+    "country": "UK",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PAINT RELATED MATERIALS",
+    "hs": [ "3208101000" ],
+    "duty": "6",
+    "gstRule": "18"
+  },
+  {
+    "country": "USA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PAINT RELATED MATERIALS",
+    "hs": [ "3208100000" ],
+    "duty": "3.7",
+    "gstRule": "18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PAINT RELATED MATERIALS",
+    "hs": [ "3208101100" ],
+    "duty": "5",
+    "gstRule": "18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PAINT RELATED MATERIALS",
+    "hs": [ "3208101100" ],
+    "duty": "25",
+    "gstRule": "18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PAINT RELATED MATERIALS",
+    "hs": [ "3208101000" ],
+    "duty": "6.5",
+    "gstRule": "18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PAINT RELATED MATERIALS",
+    "hs": [ "32081011" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "PAINT RELATED MATERIALS",
+    "hs": [ "3208101010" ],
+    "duty": "10.7",
+    "gstRule": "18"
+  },
+
+  /* ------------------ Ethanol ------------------ */
+
+  {
+    "country": "BANGLADESH",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "ETHANOL",
+    "hs": [ "22071000" ],
+    "duty": "25",
+    "gstRule": "18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "ETHANOL",
+    "hs": [ "2207100011" ],
+    "duty": "19.2",
+    "gstRule": "18"
+  },
+  {
+    "country": "UAE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "ETHANOL",
+    "hs": [ "22071010" ],
+    "duty": "5",
+    "gstRule": "18"
+  },
+  {
+    "country": "UK",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "ETHANOL",
+    "hs": [ "2207100011" ],
+    "duty": "16",
+    "gstRule": "18"
+  },
+  {
+    "country": "USA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "ETHANOL",
+    "hs": [ "2207103000" ],
+    "duty": "50",
+    "gstRule": "18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "ETHANOL",
+    "hs": [ "22071000" ],
+    "duty": "30",
+    "gstRule": "18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "ETHANOL",
+    "hs": [ "2207100000" ],
+    "duty": "16",
+    "gstRule": "18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "ETHANOL",
+    "hs": [ "2207100011" ],
+    "duty": "20",
+    "gstRule": "18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "ETHANOL",
+    "hs": [ "22071000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "ETHANOL",
+    "hs": [ "2207101000" ],
+    "duty": "10",
+    "gstRule": "18"
+  },
+
+  /* ------------------ Oxygen ------------------ */
+
+  {
+    "country": "BANGLADESH",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "OXYGEN",
+    "hs": [ "2804400000" ],
+    "duty": "8",
+    "gstRule": "5"
+  },
+  {
+    "country": "GERMANY",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "OXYGEN",
+    "hs": [ "2804400000" ],
+    "duty": "5",
+    "gstRule": "5"
+  },
+  {
+    "country": "UAE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "OXYGEN",
+    "hs": [ "28044000" ],
+    "duty": "8",
+    "gstRule": "5"
+  },
+  {
+    "country": "UK",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "OXYGEN",
+    "hs": [ "2804400000" ],
+    "duty": "0",
+    "gstRule": "5"
+  },
+  {
+    "country": "USA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "OXYGEN",
+    "hs": [ "2804400000" ],
+    "duty": "53.7",
+    "gstRule": "5"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "OXYGEN",
+    "hs": [ "28044000" ],
+    "duty": "5",
+    "gstRule": "5"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "OXYGEN",
+    "hs": [ "2804400000" ],
+    "duty": "5",
+    "gstRule": "5"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "OXYGEN",
+    "hs": [ "2804400000" ],
+    "duty": "5",
+    "gstRule": "5"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "OXYGEN",
+    "hs": [ "28044000" ],
+    "duty": "0",
+    "gstRule": "5"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "OXYGEN",
+    "hs": [ "2804400000" ],
+    "duty": "5.5",
+    "gstRule": "5"
+  },
+
+  /* ------------------ Sulphuric Acid ------------------ */
+
+  {
+    "country": "BANGLADESH",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "SULPHURIC ACID",
+    "hs": [ "28070000" ],
+    "duty": "5",
+    "gstRule": "5"
+  },
+  {
+    "country": "GERMANY",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "SULPHURIC ACID",
+    "hs": [ "2807000000" ],
+    "duty": "3",
+    "gstRule": "5"
+  },
+  {
+    "country": "UAE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "SULPHURIC ACID",
+    "hs": [ "28070010", "28070020" ],
+    "duty": "8",
+    "gstRule": "5"
+  },
+  {
+    "country": "UK",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "SULPHURIC ACID",
+    "hs": [ "2807000000" ],
+    "duty": "0",
+    "gstRule": "5"
+  },
+  {
+    "country": "USA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "SULPHURIC ACID",
+    "hs": [ "2807000000" ],
+    "duty": "50",
+    "gstRule": "5"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "SULPHURIC ACID",
+    "hs": [ "28070010" ],
+    "duty": "15",
+    "gstRule": "5"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "SULPHURIC ACID",
+    "hs": [ "2807001000" ],
+    "duty": "20",
+    "gstRule": "5"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "SULPHURIC ACID",
+    "hs": [ "2807000000" ],
+    "duty": "3",
+    "gstRule": "5"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "SULPHURIC ACID",
+    "hs": [ "28070010" ],
+    "duty": "0",
+    "gstRule": "5"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "SULPHURIC ACID",
+    "hs": [ "2807001010" ],
+    "duty": "9.4",
+    "gstRule": "5"
+  },
+
+  /* ------------------ Biological Substance ------------------ */
+
+  {
+    "country": "BANGLADESH",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BIOLOGICAL SUBSTANCE",
+    "hs": [ "30029000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "GERMANY",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BIOLOGICAL SUBSTANCE",
+    "hs": [ "3002901000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "UAE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BIOLOGICAL SUBSTANCE",
+    "hs": [ "30029010" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "UK",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BIOLOGICAL SUBSTANCE",
+    "hs": [ "3002901000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "USA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BIOLOGICAL SUBSTANCE",
+    "hs": [ "3002901000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "INDONESIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BIOLOGICAL SUBSTANCE",
+    "hs": [ "30029000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "MALAYSIA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BIOLOGICAL SUBSTANCE",
+    "hs": [ "3002900000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "NETHERLANDS",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BIOLOGICAL SUBSTANCE",
+    "hs": [ "300291000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SINGAPORE",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BIOLOGICAL SUBSTANCE",
+    "hs": [ "30029000" ],
+    "duty": "0",
+    "gstRule": "18"
+  },
+  {
+    "country": "SOUTH KOREA",
+    "category": "DANGEROUS GOODS",
+    "subcategory": "BIOLOGICAL SUBSTANCE",
+    "hs": [ "3002901000" ],
+    "duty": "0",
+    "gstRule": "18"
+  }
+
+]

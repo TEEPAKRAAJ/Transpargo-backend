@@ -1,0 +1,6 @@
+@Transpargo_HostAddress = http://localhost:5239
+
+GET {{Transpargo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
