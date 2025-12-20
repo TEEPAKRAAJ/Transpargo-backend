@@ -6,7 +6,7 @@ namespace Transpargo.Interfaces
 {
     public interface IHsCodeService
     {
-        Task<string> GetHsCodeAsync(HsCodeInput input);
+        Task<HsCodeResult> GetHsCodesAsync(HsCodeInput input);
     }
 
 }

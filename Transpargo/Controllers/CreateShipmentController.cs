@@ -68,11 +68,51 @@ public class CreateShipmentController : ControllerBase
         public string product_composition { get; set; }
         public string intended_use { get; set; }
         public string hs_code { get; set; }
+        public string destinationHsCode { get; set; }
     }
 
     [HttpPost]
     public async Task<IActionResult> CreateShipment([FromBody] CreateShipmentModel model)
     {
+        if (model == null)
+        {
+            Console.WriteLine("❌ MODEL IS NULL - PAYLOAD NOT RECEIVED");
+            return BadRequest("Payload not received");
+        }
+
+        Console.WriteLine("======================================");
+        Console.WriteLine("✅ CREATE SHIPMENT PAYLOAD RECEIVED");
+        Console.WriteLine("======================================");
+
+        Console.WriteLine(JsonSerializer.Serialize(
+            model,
+            new JsonSerializerOptions { WriteIndented = true }
+        ));
+
+        // ===================== LOG RECEIVED DATA =====================
+        Console.WriteLine("===== RECEIVED SHIPMENT DATA =====");
+        Console.WriteLine(JsonSerializer.Serialize(model, new JsonSerializerOptions { WriteIndented = true }));
+
+        // ===================== BASIC VALIDATION =====================
+        var missingFields = new List<string>();
+
+        if (string.IsNullOrEmpty(model.sender_name)) missingFields.Add("sender_name");
+        if (string.IsNullOrEmpty(model.sender_email)) missingFields.Add("sender_email");
+        if (string.IsNullOrEmpty(model.receiver_name)) missingFields.Add("receiver_name");
+        if (string.IsNullOrEmpty(model.receiver_email)) missingFields.Add("receiver_email");
+        if (string.IsNullOrEmpty(model.shipment_type)) missingFields.Add("shipment_type");
+        if (model.packages <= 0) missingFields.Add("packages");
+        if (model.weight <= 0) missingFields.Add("weight");
+
+        if (missingFields.Count > 0)
+        {
+            return BadRequest(new
+            {
+                message = "Missing or invalid fields",
+                fields = missingFields
+            });
+        }
+
         var now = DateTime.Now;
 
         // ===================== LOGS (BACKEND GENERATED) =====================
@@ -134,6 +174,8 @@ public class CreateShipmentController : ControllerBase
         );
 
         var shipmentJson = await shipmentResp.Content.ReadAsStringAsync();
+        Console.WriteLine("Shipment Response: " + shipmentJson);
+
         if (!shipmentResp.IsSuccessStatusCode)
             return StatusCode(500, shipmentJson);
 
@@ -141,7 +183,7 @@ public class CreateShipmentController : ControllerBase
             .GetProperty("s_id").GetInt32();
 
         // ===================== SENDER =====================
-        await _http.PostAsync(_url + "Sender",
+        var senderResp = await _http.PostAsync(_url + "Sender",
             new StringContent(JsonSerializer.Serialize(new
             {
                 Name = model.sender_name,
@@ -155,8 +197,10 @@ public class CreateShipmentController : ControllerBase
                 s_id
             }), Encoding.UTF8, "application/json"));
 
+        Console.WriteLine("Sender Response: " + await senderResp.Content.ReadAsStringAsync());
+
         // ===================== RECEIVER =====================
-        await _http.PostAsync(_url + "Receiver",
+        var receiverResp = await _http.PostAsync(_url + "Receiver",
             new StringContent(JsonSerializer.Serialize(new
             {
                 Name = model.receiver_name,
@@ -170,8 +214,10 @@ public class CreateShipmentController : ControllerBase
                 s_id
             }), Encoding.UTF8, "application/json"));
 
+        Console.WriteLine("Receiver Response: " + await receiverResp.Content.ReadAsStringAsync());
+
         // ===================== PRODUCT =====================
-        await _http.PostAsync(_url + "Product",
+        var productResp = await _http.PostAsync(_url + "Product",
             new StringContent(JsonSerializer.Serialize(new
             {
                 s_id,
@@ -188,8 +234,12 @@ public class CreateShipmentController : ControllerBase
                 description = model.product_description,
                 composition = model.product_composition,
                 intended_use = model.intended_use,
-                hs_code = model.hs_code
+                hs_code = model.destinationHsCode,
+                sender_hs_code = model.hs_code
+
             }), Encoding.UTF8, "application/json"));
+
+        Console.WriteLine("Product Response: " + await productResp.Content.ReadAsStringAsync());
 
         return Ok(new { message = "Shipment created successfully", s_id });
     }

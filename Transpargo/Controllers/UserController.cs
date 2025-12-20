@@ -148,7 +148,8 @@ public class UserController : ControllerBase
             product_category = product.GetProperty("category").GetString(),
             declared_value = product.GetProperty("value").GetDecimal(),
             weight = product.GetProperty("weight").GetDecimal(),
-            hs_code = product.GetProperty("sender_hs_code").GetString() ?? ""
+            hs_code = product.GetProperty("sender_hs_code").GetString() ?? "",
+            rec_hs_code = product.GetProperty("hs_code").GetString() ?? ""
 
         };
 
