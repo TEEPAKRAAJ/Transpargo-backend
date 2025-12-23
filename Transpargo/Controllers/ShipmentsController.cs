@@ -188,6 +188,7 @@ namespace Transpargo.Controllers
                 .Set(s => s.payment_log, cleanDict)
                 .Set(s => s.Sender_Log, shipment.Sender_Log)
                 .Set(s => s.Receiver_Log, shipment.Receiver_Log)
+                .Set(s => s.Status, "Payment Initiated")
                 .Update();
 
             return Ok(new

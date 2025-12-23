@@ -35,16 +35,25 @@ public class HsCodeController : ControllerBase
         Console.WriteLine("----------------------");
 
         if (result.DestinationHsCode == "NO HS CODE FOUND")
-            return Ok("NO HS CODE FOUND");
-
-        var combinedHs = $"{result.DestinationHsCode},{result.IndianHsCode}";
-
-        return Ok(new
+            return Ok(new
+            {
+                destination_hs_code = "NO HS CODE FOUND",
+                indian_hs_code = "NO HS CODE FOUND"
+            });
+        else
         {
-            combined_hs_code = combinedHs,
-            destination_hs_code = result.DestinationHsCode,
-            indian_hs_code = result.IndianHsCode
-        });
+
+            var combinedHs = $"{result.DestinationHsCode},{result.IndianHsCode}";
+            var indian = result.IndianHsCode;
+            var destination = result.DestinationHsCode;
+
+            return Ok(new
+            {
+                combined_hs_code = combinedHs,
+                destination_hs_code = destination,
+                indian_hs_code = indian
+            });
+        }
     }
 
 }
