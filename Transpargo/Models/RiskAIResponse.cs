@@ -14,6 +14,7 @@
 
         public List<string>? userProvidedDocuments { get; set; }   // added
         public List<string>? missingDocuments { get; set; }        // added
+        public string productName { get; set; }
     }
 
 }

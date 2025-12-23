@@ -54,17 +54,16 @@ If no good match exists, return NO_MATCH.
 ";
 
         var destinationHs = await _deepSeek.AskAsync(prompt);
-
+        Console.WriteLine(json);
         if (destinationHs.Contains("NO_MATCH"))
             return NoHsFound();
 
         // 3️⃣ Convert destination HS → Indian HS (8 digit)
         var indiaPrompt = $@"
 Convert this HS Code to Indian 8-digit HS Code.
-
 Destination HS Code: {destinationHs}
-
 Return ONLY the Indian HS Code.
+Return ONLY the HS Code number.
 ";
 
         var indianHs = await _deepSeek.AskAsync(indiaPrompt);

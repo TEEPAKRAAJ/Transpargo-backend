@@ -244,9 +244,7 @@ public class DocumentController : ControllerBase
                 {
                 new {
                     role="user",
-                    content=$"Return all the mandatory and important documents required for 100% customs clearance for products under HS Code {hsCode}. Output strictly as a pure JSON array of document names only. Example format: [\"Commercial Invoice\", \"Packing List\", \"Bill of Lading\", \"Certificate of Origin\", \"Customs Declaration\", \"Insurance Certificate\"]"
-
-
+                    content=$"Return all the mandatory and important documents required for 100% customs clearance for products under HS Code {hsCode}.Do not include conditional phrases such as 'if applicable'. Do not use slashes (/) ; use the word 'or' instead. Output strictly as a pure JSON array of document names only. Example format: [\"Commercial Invoice\", \"Packing List\", \"Bill of Lading\", \"Certificate of Origin\", \"Customs Declaration\", \"Insurance Certificate\"]"
 
                 }
             },

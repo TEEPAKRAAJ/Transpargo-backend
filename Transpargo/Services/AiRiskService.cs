@@ -13,52 +13,47 @@ namespace Transpargo.Services
         public AiRiskService(IConfiguration config)
         {
             _client = new HttpClient();
-            apiKey = config["DEEPSEEK_API_KEY"]; // Must exist in appsettings.json / env
+            apiKey = config["DEEPSEEK_API_KEY"];
         }
 
         public async Task<RiskAIResponse?> AnalyzeAsync(RiskAIRequest input)
         {
             string prompt = $@"
-You are a customs compliance AI. 
-Return ONLY JSON. No explanations. No markdown.
+Analyze customs compliance for:
+- HS Code: {input.HSCode}
+- Product Category: {input.ProductCategory}
+- Destination Country: {input.DestinationCountry}
 
-If HS Code is valid → generate realistic trade compliance output.
-If unsure BUT HS Code looks real → still produce documents.
+Return ONLY a JSON object with this EXACT structure (no markdown, no explanations):
 
-VALID RESPONSE FORMAT:
 {{
-  ""hsCode"": ""{input.HSCode}"",
-  ""requiredDocuments"": [""Commercial Invoice"", ""Packing List"", ""Certificate of Origin"", ""Any other relevant docs""],
-  ""keyRisks"": [""Risk1"", ""Risk2""],
-  ""recommendations"": [""Recommendation1"", ""Recommendation2""],
-  ""summary"": ""Short summary about compliance requirements"",
-  ""riskLevel"": ""Low|Medium|High"",
-  ""riskScore"": 10-90,
-  ""confidence"": 0.5-1.0
+  ""hsCode"": ""string"",
+  ""requiredDocuments"": [""string array""],
+  ""keyRisks"": [""string array""],
+  ""recommendations"": [""string array""],
+  ""summary"": ""string"",
+  ""riskLevel"": ""Low or Medium or High or Unknown"",
+  ""riskScore"": number between 0-100,
+  ""confidence"": number between 0.0-1.0
 }}
-
-INVALID RESPONSE FORMAT:
-{{
-  ""hsCode"": ""{input.HSCode}"",
-  ""requiredDocuments"": [],
-  ""keyRisks"": [],
-  ""recommendations"": [],
-  ""summary"": ""Invalid HS Code"",
-  ""riskLevel"": ""Unknown"",
-  ""riskScore"": 0,
-  ""confidence"": 0.0
-}}
-";
+If the HS code is not the correct value for that product category in the destination country then return as follows or
+if HS Code is invalid or you're unsure, or if the confidence is < 100 use:
+- riskLevel: ""Unknown""
+- riskScore: 0
+- confidence: 0.0
+- empty arrays for documents/risks/recommendations
+- summary: ""Invalid HS Code""";
 
             var body = new
             {
                 model = "deepseek-ai/deepseek-v3.1-terminus",
                 messages = new[] {
-                    new{ role="system", content="Return ONLY JSON strictly" },
-                    new{ role="user", content=prompt }
+                    new { role = "system", content = "You are a JSON-only API. Return valid JSON objects with no markdown formatting, no code blocks, no explanations. Only output the raw JSON object." },
+                    new { role = "user", content = prompt }
                 },
-                temperature = 0.3,
-                max_tokens = 700
+                temperature = 0.2,
+                max_tokens = 700,
+                response_format = new { type = "json_object" }
             };
 
             var req = new HttpRequestMessage(HttpMethod.Post,
@@ -68,10 +63,14 @@ INVALID RESPONSE FORMAT:
             req.Content = new StringContent(JsonSerializer.Serialize(body), Encoding.UTF8, "application/json");
 
             var res = await _client.SendAsync(req);
+            if (!res.IsSuccessStatusCode)
+            {
+                return ErrorFallback(input.HSCode, $"API error: {res.StatusCode}");
+            }
+
             var raw = await res.Content.ReadAsStringAsync();
 
-
-            //------------------ Extract message.content JSON only ------------------//
+            // Extract message.content JSON
             string json = "";
             try
             {
@@ -82,23 +81,41 @@ INVALID RESPONSE FORMAT:
                     .GetProperty("content")
                     .GetString() ?? "";
             }
-            catch
+            catch (Exception ex)
             {
-                return ErrorFallback(input.HSCode, "API did not return JSON format");
+                return ErrorFallback(input.HSCode, $"API response parsing failed: {ex.Message}");
             }
 
-            //------------------ Clean & isolate JSON ------------------//
-            int start = json.IndexOf("{");
-            int end = json.LastIndexOf("}");
-            if (start < 0 || end < 0)
-                return ErrorFallback(input.HSCode, "Response did not contain JSON");
+            // Clean the JSON string (remove any potential markdown or whitespace)
+            json = json.Trim();
 
-            json = json.Substring(start, end - start + 1)
-                       .Replace("```json", "")
-                       .Replace("```", "")
-                       .Trim();
+            // Remove markdown code blocks if present
+            if (json.StartsWith(""))
+            {
+                int firstNewline = json.IndexOf('\n');
+                int lastBackticks = json.LastIndexOf("");
+                if (firstNewline > 0 && lastBackticks > firstNewline)
+                {
+                    json = json.Substring(firstNewline + 1, lastBackticks - firstNewline - 1).Trim();
+                }
+            }
 
-            //------------------ Deserialize ------------------//
+            // Ensure we have valid JSON boundaries
+            if (!json.StartsWith("{") || !json.EndsWith("}"))
+            {
+                int start = json.IndexOf("{");
+                int end = json.LastIndexOf("}");
+                if (start >= 0 && end > start)
+                {
+                    json = json.Substring(start, end - start + 1);
+                }
+                else
+                {
+                    return ErrorFallback(input.HSCode, "Response did not contain valid JSON");
+                }
+            }
+
+            // Deserialize to RiskAIResponse
             RiskAIResponse? data = null;
             try
             {
@@ -107,45 +124,48 @@ INVALID RESPONSE FORMAT:
                     PropertyNameCaseInsensitive = true
                 });
             }
-            catch
+            catch (JsonException ex)
             {
-                return ErrorFallback(input.HSCode, "JSON parsing failed");
+                return ErrorFallback(input.HSCode, $"JSON parsing failed: {ex.Message}");
             }
 
-            //------------------ Final Validation ------------------//
+            // Validate response
             if (data == null)
-                return ErrorFallback(input.HSCode, "Empty response");
-
-            // Prevent unknown for valid responses
-            if (data.requiredDocuments == null || data.requiredDocuments.Count == 0)
             {
-                data.requiredDocuments = new() { "Commercial Invoice", "Packing List", "Certificate of Origin" };
-                data.keyRisks = new() { "Additional compliance verification needed" };
-                data.recommendations = new() { "Provide missing certificates if required" };
-                data.riskLevel = "Medium";
-                data.riskScore = 50;
-                data.summary = "AI returned incomplete fields, fallback docs applied.";
-                data.confidence = 0.6;
+                return ErrorFallback(input.HSCode, "Deserialization returned null");
             }
+
+            // Ensure all required fields are present (initialize if null)
+            data.hsCode ??= input.HSCode;
+            data.requiredDocuments ??= new List<string>();
+            data.keyRisks ??= new List<string>();
+            data.recommendations ??= new List<string>();
+            data.summary ??= "No summary provided";
+            data.riskLevel ??= "Unknown";
+
+            // Validate numeric ranges
+            if (data.riskScore < 0) data.riskScore = 0;
+            if (data.riskScore > 100) data.riskScore = 100;
+            if (data.confidence < 0.0) data.confidence = 0.0;
+            if (data.confidence > 1.0) data.confidence = 1.0;
 
             return data;
         }
 
-
-        // 🔥 Reusable fallback
         private RiskAIResponse ErrorFallback(string hs, string msg)
         {
             return new RiskAIResponse
             {
                 hsCode = hs,
-                riskLevel = "Medium",
-                riskScore = 50,
-                confidence = 0.5,
+                riskLevel = "Unknown",
+                riskScore = 0,
+                confidence = 0.0,
                 summary = msg,
-                requiredDocuments = new() { "Commercial Invoice", "Packing List", "Certificate of Origin" },
-                keyRisks = new() { "Incomplete compliance info" },
-                recommendations = new() { "Check HS code or provide more details" }
+                requiredDocuments = new List<string>(),
+                keyRisks = new List<string> { "Unable to process request" },
+                recommendations = new List<string> { "Verify HS code and try again" }
             };
         }
+
     }
 }
