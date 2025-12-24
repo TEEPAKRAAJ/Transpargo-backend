@@ -60,7 +60,7 @@ If no good match exists, return NO_MATCH.
 
         // 3️⃣ Convert destination HS → Indian HS (8 digit)
         var indiaPrompt = $@"
-Convert this HS Code to Indian 8-digit HS Code.
+Convert this HS Code to Indian HS Code.
 Destination HS Code: {destinationHs}
 Return ONLY the Indian HS Code.
 Return ONLY the HS Code number.
