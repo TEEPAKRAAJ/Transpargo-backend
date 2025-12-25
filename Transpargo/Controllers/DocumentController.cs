@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
+using Transpargo.Controllers;
 using Transpargo.Models;
 
 [ApiController]
@@ -217,85 +218,225 @@ public class DocumentController : ControllerBase
 
     [AllowAnonymous]
     [HttpGet("required-docs/{hsCode}")]
-    public async Task<IActionResult> GetRequiredDocsAI(string hsCode)
+    public async Task<IActionResult> GetRequiredDocs(
+    [FromRoute] int shipmentId,
+    [FromRoute] string hsCode
+)
     {
         try
         {
-            string apiKey = "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";
+            Console.WriteLine("========== GetRequiredDocs START ==========");
+            Console.WriteLine($"ShipmentId: {shipmentId}");
+            Console.WriteLine($"HS Code: {hsCode}");
 
+            // =====================================================
+            // 1️⃣ GET DESTINATION COUNTRY FROM Receiver TABLE
+            // =====================================================
+            var receiverReq = new HttpRequestMessage(
+                HttpMethod.Get,
+                $"{_restUrl}Receiver?s_id=eq.{shipmentId}&select=Country"
+            );
+            receiverReq.Headers.Add("apikey", _key);
+            receiverReq.Headers.Add("Authorization", $"Bearer {_key}");
 
-            if (string.IsNullOrEmpty(apiKey))
+            var receiverResp = await _http.SendAsync(receiverReq);
+            var receiverJson = await receiverResp.Content.ReadAsStringAsync();
+
+            Console.WriteLine("---- RECEIVER FETCH ----");
+            Console.WriteLine($"STATUS: {receiverResp.StatusCode}");
+            Console.WriteLine(receiverJson);
+
+            if (!receiverResp.IsSuccessStatusCode)
+                return StatusCode((int)receiverResp.StatusCode, receiverJson);
+
+            var receivers = JsonSerializer.Deserialize<List<ReceiverRow>>(receiverJson);
+
+            if (receivers == null || receivers.Count == 0 ||
+                string.IsNullOrWhiteSpace(receivers[0].Country))
             {
+                Console.WriteLine("Receiver country NOT FOUND");
+                return BadRequest("Destination country not found");
+            }
+
+            string country = receivers[0].Country.Trim();
+            Console.WriteLine($"Destination Country: {country}");
+
+            // =====================================================
+            // 2️⃣ CHECK ShipmentDoc TABLE
+            // =====================================================
+            var docReq = new HttpRequestMessage(
+                HttpMethod.Get,
+                $"{_restUrl}ShipmentDoc?hscode=eq.{hsCode}&country=eq.{country}"
+            );
+            docReq.Headers.Add("apikey", _key);
+            docReq.Headers.Add("Authorization", $"Bearer {_key}");
+
+            var docResp = await _http.SendAsync(docReq);
+            var docJson = await docResp.Content.ReadAsStringAsync();
+
+            Console.WriteLine("---- SHIPMENTDOC CHECK ----");
+            Console.WriteLine($"STATUS: {docResp.StatusCode}");
+            Console.WriteLine(docJson);
+
+            if (!docResp.IsSuccessStatusCode)
+                return StatusCode((int)docResp.StatusCode, docJson);
+
+            var existingDocs = JsonSerializer.Deserialize<List<ShipmentDocRow>>(docJson);
+
+            if (existingDocs?.FirstOrDefault()?.documents?.Any() == true)
+            {
+                Console.WriteLine("Documents FOUND in DB. Returning cached data.");
                 return Ok(new
                 {
-                    required_documents = new List<string>{
-                    "Commercial Invoice","Packing List","Certificate of Origin"
-                }
+                    required_documents = existingDocs[0].documents
                 });
             }
 
-            var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
+            Console.WriteLine("Documents NOT FOUND. Calling AI...");
+
+            // =====================================================
+            // 3️⃣ CALL AI (ONLY ONCE)
+            // =====================================================
+            var aiClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
+            aiClient.DefaultRequestHeaders.Add(
+                "Authorization",
+                $"Bearer {Environment.GetEnvironmentVariable("DEEPSEEK_API_KEY")}"
+            );
 
             var payload = new
             {
                 model = "deepseek-ai/deepseek-v3.1-terminus",
                 messages = new[]
                 {
-                new {
-                    role="user",
-                    content=$"Return all the mandatory and important documents required for 100% customs clearance for products under HS Code {hsCode}.Do not include conditional phrases such as 'if applicable'. Do not use slashes (/) ; use the word 'or' instead. Output strictly as a pure JSON array of document names only. Example format: [\"Commercial Invoice\", \"Packing List\", \"Bill of Lading\", \"Certificate of Origin\", \"Customs Declaration\", \"Insurance Certificate\"]"
-
+                new
+                {
+                    role = "user",
+                    content =
+                        $"Return all mandatory and important documents required for 100% customs clearance " +
+                        $"for products under HS Code {hsCode} when importing into {country}. " +
+                        $"Do not include conditional phrases such as 'if applicable'. " +
+                        $"Do not use slashes (/); use the word 'or'. " +
+                        $"Output strictly as a pure JSON array of document names only."
                 }
             },
-                temperature = 0.2
+                temperature = 0.2,
             };
 
-            var res = await client.PostAsync(
+            var aiResp = await aiClient.PostAsync(
                 "https://integrate.api.nvidia.com/v1/chat/completions",
-                new StringContent(JsonSerializer.Serialize(payload),
-                Encoding.UTF8, "application/json")
+                new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json")
             );
 
-            string result = await res.Content.ReadAsStringAsync();
+            var raw = await aiResp.Content.ReadAsStringAsync();
 
-            if (!res.IsSuccessStatusCode)
-            {
-                return Ok(new
-                {
-                    required_documents = new List<string>{
-                    "Commercial Invoice","Packing List","Certificate of Origin","Insurance Certificate"
-                }
-                });
-            }
+            Console.WriteLine("---- AI RAW RESPONSE ----");
+            Console.WriteLine($"STATUS: {aiResp.StatusCode}");
+            Console.WriteLine(raw);
 
-            var json = JsonDocument.Parse(result);
-            string output = json.RootElement
+            if (!aiResp.IsSuccessStatusCode || string.IsNullOrWhiteSpace(raw))
+                throw new Exception("AI request failed");
+
+            using var root = JsonDocument.Parse(raw);
+
+            var content = root.RootElement
                 .GetProperty("choices")[0]
                 .GetProperty("message")
                 .GetProperty("content")
                 .GetString();
 
-            // Ensure valid JSON extraction
-            int s = output.IndexOf("[");
-            int e = output.LastIndexOf("]");
-            var cleaned = output.Substring(s, (e - s) + 1);
+            Console.WriteLine("---- AI MESSAGE CONTENT ----");
+            Console.WriteLine(content);
 
-            List<string> docs = JsonSerializer.Deserialize<List<string>>(cleaned);
+            int start = content.IndexOf("[");
+            int end = content.LastIndexOf("]");
 
-            return Ok(new { required_documents = docs });
-        }
-        catch
-        {
-            // FINAL SAFETY fallback
+            if (start < 0 || end <= start)
+                throw new Exception("Invalid AI JSON array");
+
+            var jsonArray = content.Substring(start, end - start + 1);
+
+            Console.WriteLine("---- AI JSON ARRAY ----");
+            Console.WriteLine(jsonArray);
+
+            var docs = JsonSerializer.Deserialize<List<string>>(jsonArray);
+
+            if (docs == null || docs.Count == 0)
+                throw new Exception("AI returned empty document list");
+
+            // =====================================================
+            // 4️⃣ UPSERT INTO ShipmentDoc TABLE
+            // =====================================================
+            var upsertBody = new
+            {
+                hscode = hsCode,
+                country = country,
+                documents = docs
+            };
+
+            Console.WriteLine("---- SHIPMENTDOC UPSERT REQUEST ----");
+            Console.WriteLine(JsonSerializer.Serialize(upsertBody));
+
+            var upsertReq = new HttpRequestMessage(
+                HttpMethod.Post,
+                $"{_restUrl}ShipmentDoc"
+            );
+
+            upsertReq.Headers.Add("apikey", _key);
+            upsertReq.Headers.Add("Authorization", $"Bearer {_key}");
+            upsertReq.Headers.Add("Prefer", "resolution=merge-duplicates");
+
+            upsertReq.Content = new StringContent(
+                JsonSerializer.Serialize(upsertBody),
+                Encoding.UTF8,
+                "application/json"
+            );
+
+            var upsertResp = await _http.SendAsync(upsertReq);
+            var upsertRespBody = await upsertResp.Content.ReadAsStringAsync();
+
+            Console.WriteLine("---- SHIPMENTDOC UPSERT RESPONSE ----");
+            Console.WriteLine($"STATUS: {upsertResp.StatusCode}");
+            Console.WriteLine(upsertRespBody);
+
+            if (!upsertResp.IsSuccessStatusCode)
+                throw new Exception($"ShipmentDoc upsert failed: {upsertRespBody}");
+
+            Console.WriteLine("========== GetRequiredDocs SUCCESS ==========");
+
             return Ok(new
             {
-                required_documents = new List<string>{
-                "Commercial Invoice","Packing List","Bill of Lading","Certificate of Origin",
-                "Insurance Certificate","Customs Declaration Form"
+                required_documents = docs
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("========== GetRequiredDocs ERROR ==========");
+            Console.WriteLine(ex.ToString());
+
+            return Ok(new
+            {
+                required_documents = new List<string>
+            {
+                "Commercial Invoice",
+                "Packing List",
+                "Bill of Lading",
+                "Certificate of Origin",
+                "Insurance Certificate",
+                "Customs Declaration Form"
             }
             });
         }
+    }
+    private class ReceiverRow
+    {
+        public string Country { get; set; }
+    }
+
+    private class ShipmentDocRow
+    {
+        public string hscode { get; set; }
+        public string country { get; set; }
+        public List<string> documents { get; set; }
     }
 
 
