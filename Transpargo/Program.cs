@@ -8,6 +8,12 @@ using Transpargo.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5000);
+});
+
+
 // -------------------------------------------------------
 // Controllers + JSON
 // -------------------------------------------------------
@@ -136,15 +142,13 @@ Environment.SetEnvironmentVariable(
 
 var app = builder.Build();
 
-// -------------------------------------------------------
-// Middleware
-// -------------------------------------------------------
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+app.UseRouting();
 app.UseCors("AllowAll");
 
 app.UseAuthentication();
@@ -152,7 +156,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Bind to port 5000
-app.Urls.Add("http://0.0.0.0:5000");
-
 app.Run();
+

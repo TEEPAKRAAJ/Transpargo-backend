@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Transpargo.Services;
 
 namespace Transpargo.Controllers
@@ -20,7 +21,7 @@ namespace Transpargo.Controllers
             public string Issue { get; set; }
             public string ShipmentId { get; set; }
         }
-
+        [AllowAnonymous]
         [HttpPost("send")]
         public async Task<IActionResult> SendIssueEmail([FromBody] EmailRequest req)
         {
@@ -42,7 +43,7 @@ namespace Transpargo.Controllers
             public string ShipmentId { get; set; }
             public string Message { get; set; }   // Full body content
         }
-
+        [AllowAnonymous]
         [HttpPost("notify")]
         public async Task<IActionResult> SendShipmentNotification(
             [FromBody] ShipmentNotificationRequest req)
