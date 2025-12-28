@@ -126,16 +126,17 @@ public class FeedbackController : ControllerBase
                      }
 
                 );
-            int total_rate = 0;
-            double avg_rate = 0.0;
-            foreach (var row in rows)
-            {
-                total_rate += row.Rating;
-            }
-
-            avg_rate = (double)total_rate / rows.Count;
+            
             if (rows != null && rows.Count > 0)
             {
+                int total_rate = 0;
+                double avg_rate = 0.0;
+                foreach (var row in rows)
+                {
+                    total_rate += row.Rating;
+                }
+
+                avg_rate = (double)total_rate / rows.Count;
                 return Ok(new
                 {
                     feedback = rows,
